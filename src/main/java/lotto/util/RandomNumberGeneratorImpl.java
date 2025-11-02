@@ -4,14 +4,14 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.List;
 
+public class RandomNumberGeneratorImpl implements RandomNumberGenerator {
 
-public class RandomNumberGeneratorImpl {
+    private static final int RANDOM_NUMBER_START = 1;
+    private static final int RANDOM_NUMBER_END = 45;
+    private static final int RANDOM_NUMBER_RANGE = 6;
 
-    public final int RANDOM_NUMBER_START = 1;
-    public final int RANDOM_NUMBER_END = 45;
-    public final int RANDOM_NUMBER_RANGE = 6;
-
-    List<Integer> generate(){
+    @Override
+    public List<Integer> generate(){
         return Randoms.pickUniqueNumbersInRange(RANDOM_NUMBER_START, RANDOM_NUMBER_END, RANDOM_NUMBER_RANGE);
     }
 }
