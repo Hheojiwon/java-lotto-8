@@ -37,4 +37,13 @@ public class Lottos {
     public List<Lotto> getLottos() {
         return lottos;
     }
+
+    public LottoResult match(LottoWin winningLotto) {
+        List<Rank> ranks = new ArrayList<>();
+        for (Lotto lotto : lottos) {
+            Rank rank = winningLotto.calculateRank(lotto);
+            ranks.add(rank);
+        }
+        return new LottoResult(ranks);
+    }
 }
