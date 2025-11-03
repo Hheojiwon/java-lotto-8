@@ -11,6 +11,7 @@ public enum ErrorMessage {
     INVALID_LOTTO_NUMBER_EMPTY("로또 번호가 비어 있습니다."),
     INVALID_LOTTO_RANGE("로또 번호는 1부터 45 사이의 숫자여야 합니다."),
     INVALID_LOTTO_NUMBER_COUNT("로또 번호는 6개여야 합니다."),
+    INVALID_LOTTO_NUMBER_DUPLICATE("로또 번호가 중복되고 있습니다."),
     DUPLICATE_WINNING_NUMBER("당첨 번호에 중복된 숫자가 있습니다.");
 
 

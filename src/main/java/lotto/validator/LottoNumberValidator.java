@@ -3,7 +3,9 @@ package lotto.validator;
 import lotto.exception.ErrorMessage;
 import lotto.exception.LottoException;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LottoNumberValidator {
 
@@ -20,10 +22,20 @@ public class LottoNumberValidator {
             throw new LottoException(ErrorMessage.INVALID_LOTTO_NUMBER_COUNT);
         }
 
+        if (hasDuplicates(numbers)) {
+            throw new LottoException(ErrorMessage.INVALID_LOTTO_NUMBER_DUPLICATE);
+        }
+
+
         for (int number : numbers) {
             if (number < MIN_NUMBER || number > MAX_NUMBER) {
                 throw new LottoException(ErrorMessage.INVALID_LOTTO_RANGE);
             }
         }
+    }
+
+    private static boolean hasDuplicates(List<Integer> numbers) {
+        Set<Integer> uniqueNumbers = new HashSet<>(numbers);
+        return uniqueNumbers.size() != numbers.size();
     }
 }
